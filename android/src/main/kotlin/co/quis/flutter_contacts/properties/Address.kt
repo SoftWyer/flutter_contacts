@@ -14,7 +14,8 @@ data class Address(
     var country: String = "",
     var isoCountry: String = "",
     var subAdminArea: String = "",
-    var subLocality: String = ""
+    var subLocality: String = "",
+    var isPrimary: Boolean = false,
 ) {
 
     companion object {
@@ -31,7 +32,8 @@ data class Address(
             m["country"] as String,
             m["isoCountry"] as String,
             m["subAdminArea"] as String,
-            m["subLocality"] as String
+            m["subLocality"] as String,
+            m["isPrimary"] as Boolean,
         )
     }
 
@@ -48,6 +50,7 @@ data class Address(
         "country" to country,
         "isoCountry" to isoCountry,
         "subAdminArea" to subAdminArea,
-        "subLocality" to subLocality
+        "subLocality" to subLocality,
+        "isPrimary" to isPrimary,
     )
 }

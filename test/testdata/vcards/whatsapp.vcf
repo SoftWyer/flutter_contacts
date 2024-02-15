@@ -16,7 +16,7 @@ item5.URL:http://www.example2.com
 item5.X-ABLabel:OTHER
 EMAIL;TYPE=Home:johnsmith@example.com
 EMAIL;TYPE=Work:john@smith.com
-item6.ADR;type=Home:;;123 Main St;Portland;TN;37148;USA
+item6.ADR;type=Home;type=pref:;;123 Main St;Portland;TN;37148;USA
 item6.X-ABADR:
 item7.ADR;type=Work:;;1600 Amphitheatre Pkwy Mountain View CA 94043 USA;;;;
 item7.X-ABADR:ac

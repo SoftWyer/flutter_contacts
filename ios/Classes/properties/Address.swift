@@ -18,6 +18,7 @@ struct Address {
     var isoCountry: String = ""
     var subAdminArea: String = ""
     var subLocality: String = ""
+    var isPrimary: Bool = false // not supported on iOS
 
     init(fromMap m: [String: Any]) {
         address = m["address"] as! String
@@ -33,6 +34,7 @@ struct Address {
         isoCountry = m["isoCountry"] as! String
         subAdminArea = m["subAdminArea"] as! String
         subLocality = m["subLocality"] as! String
+        isPrimary = m["isPrimary"] as! Bool
     }
 
     init(fromAddress a: CNLabeledValue<CNPostalAddress>) {
@@ -79,6 +81,7 @@ struct Address {
         "isoCountry": isoCountry,
         "subAdminArea": subAdminArea,
         "subLocality": subLocality,
+        "isPrimary": isPrimary,
     ]
     }
 

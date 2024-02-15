@@ -8,7 +8,7 @@ ORG:FlutterContacts
 TEL:555-123-4567
 TEL;type=FAX:555-999-9999
 URL;type=pref:http://www.example.com
-ADR:;123 Main St;Apt 3;Portland;TN;37148;USA
+ADR;type=pref:;123 Main St;Apt 3;Portland;TN;37148;USA
 URL:http://linked.com/profile
 URL:http://facebook.com/profile
 URL:http://google.plus/profile

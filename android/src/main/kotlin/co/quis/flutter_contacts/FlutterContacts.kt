@@ -328,7 +328,8 @@ class FlutterContacts {
                                 getString(StructuredPostal.COUNTRY),
                                 "",
                                 "",
-                                ""
+                                "",
+                                getInt(StructuredPostal.IS_PRIMARY) == 1,
                             )
                             contact.addresses += address
                         }

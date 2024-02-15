@@ -59,6 +59,7 @@ final _complexContact = {
       'isoCountry': 'USA',
       'subAdminArea': '',
       'subLocality': '',
+      'isPrimary': true,
     },
   ],
   'organizations': [
@@ -158,7 +159,7 @@ void main() {
           'TEL;VALUE=uri;TYPE="cell,text";PREF=1:tel:(555) 123-4567',
           'TEL;VALUE=uri:tel:555-000-1111',
           'EMAIL:complex@contact.com',
-          'ADR;LABEL=home:;;123 Main St;Portland;OR;97086;USA',
+          'ADR;LABEL=home;PREF=1:;;123 Main St;Portland;OR;97086;USA',
           'ORG:Flutter;Contact Department',
           'TITLE:Contact',
           'ROLE:Being a contact',

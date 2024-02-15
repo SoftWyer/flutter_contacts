@@ -62,6 +62,10 @@ class Address {
   /// Anything else describing the address (iOS only).
   String subLocality;
 
+  /// Whether this is the default address for that contact
+  /// (Android only).
+  bool isPrimary;
+
   Address(
     this.address, {
     this.label = AddressLabel.home,
@@ -76,6 +80,7 @@ class Address {
     this.isoCountry = '',
     this.subAdminArea = '',
     this.subLocality = '',
+    this.isPrimary = false,
   });
 
   factory Address.fromJson(Map<String, dynamic> json) => Address(
@@ -93,6 +98,7 @@ class Address {
         isoCountry: (json['isoCountry'] as String?) ?? '',
         subAdminArea: (json['subAdminArea'] as String?) ?? '',
         subLocality: (json['subLocality'] as String?) ?? '',
+        isPrimary: (json['isPrimary'] as bool?) ?? false,
       );
   Map<String, dynamic> toJson() => <String, dynamic>{
         'address': address,
@@ -108,6 +114,7 @@ class Address {
         'isoCountry': isoCountry,
         'subAdminArea': subAdminArea,
         'subLocality': subLocality,
+        'isPrimary': isPrimary,
       };
 
   @override
@@ -124,7 +131,8 @@ class Address {
       country.hashCode ^
       isoCountry.hashCode ^
       subAdminArea.hashCode ^
-      subLocality.hashCode;
+      subLocality.hashCode ^
+      isPrimary.hashCode;
 
   @override
   bool operator ==(Object o) =>
@@ -141,7 +149,8 @@ class Address {
       o.country == country &&
       o.isoCountry == isoCountry &&
       o.subAdminArea == subAdminArea &&
-      o.subLocality == subLocality;
+      o.subLocality == subLocality &&
+      o.isPrimary == isPrimary;
 
   @override
   String toString() =>
@@ -149,7 +158,7 @@ class Address {
       'street=$street, pobox=$pobox, neighborhood=$neighborhood, city=$city, '
       'state=$state, postalCode=$postalCode, country=$country, '
       'isoCountry=$isoCountry, subAdminArea=$subAdminArea, '
-      'subLocality=$subLocality)';
+      'subLocality=$subLocality, isPrimary=$isPrimary)';
 
   List<String> toVCard() {
     // ADR (V3): https://tools.ietf.org/html/rfc2426#section-3.2.1
@@ -164,6 +173,9 @@ class Address {
           s += ';TYPE=work';
           break;
         default:
+      }
+      if (isPrimary) {
+        s += ',pref';
       }
     } else {
       switch (label) {
@@ -182,6 +194,9 @@ class Address {
         case AddressLabel.custom:
           s += ';LABEL="${vCardEncode(customLabel)}"';
           break;
+      }
+      if (isPrimary) {
+        s += ';PREF=1';
       }
     }
     if (street.isNotEmpty ||

@@ -53,7 +53,8 @@
             "country": "USA",
             "isoCountry": "",
             "subAdminArea": "",
-            "subLocality": ""
+            "subLocality": "",
+            "isPrimary": true
         }
     ],
     "organizations": [

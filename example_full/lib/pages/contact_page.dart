@@ -179,6 +179,7 @@ class _ContactPageState extends State<ContactPage>
                     Text('ISO country: ${x.isoCountry}'),
                     Text('Sub admin area: ${x.subAdminArea}'),
                     Text('Sub locality: ${x.subLocality}'),
+                    Text('Primary: ${x.isPrimary}')
                   ]),
           _makeCard(
               'Organizations',

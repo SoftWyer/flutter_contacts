@@ -583,7 +583,8 @@
             "country": "USA",
             "isoCountry": "",
             "subAdminArea": "",
-            "subLocality": ""
+            "subLocality": "",
+            "isPrimary": true
         },
         {
             "address": "1600 Amphitheatre Pkwy, Mountain View, CA 94043",
@@ -598,7 +599,8 @@
             "country": "",
             "isoCountry": "",
             "subAdminArea": "",
-            "subLocality": ""
+            "subLocality": "",
+            "isPrimary": false
         },
         {
             "address": "1 rue principale Paris 01000 France",
@@ -613,7 +615,8 @@
             "country": "France",
             "isoCountry": "",
             "subAdminArea": "",
-            "subLocality": ""
+            "subLocality": "",
+            "isPrimary": false
         }
     ],
     "organizations": [

@@ -568,6 +568,9 @@ void _parseAddressLabel(String label, Address address, bool defaultToCustom) {
     case 'OTHER':
       address.label = AddressLabel.other;
       break;
+    case 'PREF':
+      address.isPrimary = true;
+      break;
     default:
       if (defaultToCustom) {
         address.label = AddressLabel.custom;
