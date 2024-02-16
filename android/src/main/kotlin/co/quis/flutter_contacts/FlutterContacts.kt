@@ -832,13 +832,16 @@ class FlutterContacts {
             )
             if (cursor == null) {
                 return mapOf()
-            }
+}
             var groups = mutableMapOf<String, PGroup>()
             while (cursor.moveToNext()) {
                 val groupId = cursor.getString(cursor.getColumnIndex(Groups._ID)) ?: ""
                 val groupName = cursor.getString(cursor.getColumnIndex(Groups.TITLE)) ?: ""
                 groups[groupId] = PGroup(id = groupId, name = groupName)
             }
+
+            cursor.close();
+
             return groups
         }
 
